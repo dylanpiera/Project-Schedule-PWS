@@ -1,6 +1,7 @@
 <?php
 //error_reporting(E_ALL);
-require 'connect.php';
+require 'functions/connect.php';
+#require 'functions/pws.php';
 
 
 if($result = $db->query("SELECT * FROM leerling")) {
@@ -20,11 +21,13 @@ if($result = $db->query("SELECT * FROM leerling")) {
 	die($db->error);
 }
 
-/* How to insert stuff inside the database
+/* #How to insert stuff inside the database
 if ($insert = $db->query("INSERT INTO leerling (voornaam, achternaam, leerlingnummer, klas) VALUES ('Ruben','de Jong','128292','5I')")) {
 	#echo $db->affected_rows;
 }*/
 
+#Create new pws entry new_pws($db, Title, Description, Location)
+#new_pws($db, "Test title", "Test description", "LR000");
 
 /*  How to update a query :
 if($update = $db->query("UPDATE leerling SET leerlingnummer = 129007")) {
